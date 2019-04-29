@@ -17,6 +17,13 @@
   <div class="container">
   <!-- Content here --> <%= yield %>
 </div>
+
+<% flash.each do |name, msg| %>
+  <ul>
+  <li><%= msg %></li>
+  </ul>
+  <% end %>
+  <%= yield %>
     
   </body>
 </html>
