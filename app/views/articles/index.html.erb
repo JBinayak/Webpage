@@ -1,4 +1,17 @@
+<h1>Listing all articles</h1>
+<p>
+    <%= link_to "Create new article", new_article_path %>
+</p>
+<table>
+    <tr>
+        <th>Title</th>
+        <th>Description</th>
+    <tr>
 <% @articles.each do |article|%>
-    <h2><%= article.title%> </h2>
-    <%= article.description.html_safe%>
+    </tr>
+        <td><%= article.title%> </td>
+        <td><%= article.description.html_safe%></td>
+        <td><%= link_to "Edit", edit_article_path(article) %></td>
+        <td><%= link_to "Show", article_path(article) %></td>
 <% end%>
+</table>
